@@ -1,0 +1,110 @@
+ *{
+    margin: 5px;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: rgb(43, 89, 150);
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: /* Define the grid layout using grid-template-areas, with 3 rows and 3 columns */
+    "header header header"
+    "nav content side"
+    "footer footer footer";
+    grid-gap: 10px;
+    height: 98vh;
+    text-align: center;
+}
+
+header{
+    grid-area: header ;
+    background-color: lightblue;
+    padding: 20px;
+}
+
+p {
+    font-size: 17px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+
+}
+
+nav{
+    grid-area: nav;
+    background-color: lightskyblue;
+    padding: 10px;
+    margin-left: 8px;
+    
+}
+
+h3 {
+    font-size: 20px;
+}
+
+main{
+    grid-area: content;
+    background-color: darkcyan;
+    padding: 10px;
+ 
+}
+
+aside{
+    grid-area: side;
+    background-color: lightskyblue;
+    padding: 10px;
+    margin-right: 8px;
+    
+    
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+
+}
+
+footer{
+    grid-area: footer;
+    background-color: beige;
+    padding: 10px;
+    
+}
+
+
+@media (max-width: 768px) {
+    /* styles for an element with the class "container" */
+.container {
+    grid-template-areas:
+      "header"
+      "nav"
+      "content"
+      "side"
+      "footer";
+
+    grid-template-columns: 1fr; /* specify that the grid should have a single column with a width of 1 fractional unit */
+
+        /* specify the heights of each row in the grid */
+    grid-template-rows:
+      auto /* Header */
+      minmax(75px, auto) /* Nav */
+      1fr /* Content */
+      minmax(75px, auto) /* Sidebar */
+      auto; /* Footer */
+    }
+
+    /* styles for elements with the class "nav" or "aside" */
+    nav, aside {
+    margin: 0; /* remove the margin around the element */
+    }
+
+}
